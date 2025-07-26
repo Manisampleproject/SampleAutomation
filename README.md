@@ -73,3 +73,5 @@ CI workflow via GitHub Actions
 
 Performance tests with Artillery
 
+Push logs to datadog
+
