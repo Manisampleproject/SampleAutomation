@@ -24,5 +24,14 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Configure Datadog Test Optimization
+      uses: datadog/test-visibility-github-action@v2
+      with:
+        languages: js
+        api_key: ${{secrets.DD_API_KEY}}
+        site: us5.datadoghq.com
     - name: Run tests
+      shell: bash
       run: npm test
+    env:
+      NODE_OPTIONS: -r ${{env.DD_TRACE_PACKAGE}}
