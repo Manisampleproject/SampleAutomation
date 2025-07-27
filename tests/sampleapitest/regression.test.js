@@ -95,10 +95,10 @@ describe.skip('validate User data', () => {
 
 })
 
-describe('Array', function () {
-  describe('#indexOf()', function () {
-    // pending test below
-    it('should return -1 when the value is not present');
+describe('Failing Test Suite1', function() {
+  it('should intentionally fail because 2 + 2 is not 5', function() {
+    const result = 1 + 2;
+    assert.strictEqual(result, 7, 'Expected 1 + 2 to be 7, but it was not.');
   });
 });
 
@@ -112,7 +112,7 @@ describe('Failing Test Suite2', function() {
 describe('Failing Test Suite3', function() {
   it('should intentionally fail because 2 + 2 is not 5', function() {
     const result = 3 + 2;
-    assert.strictEqual(result, 7, 'Expected 3 + 2 to be 5, but it was not.');
+    assert.strictEqual(result, 7, 'Expected 3 + 2 to be 7, but it was not.');
   });
 });
 
