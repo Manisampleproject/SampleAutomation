@@ -28,9 +28,9 @@ jobs:
         cache: 'npm'
     - name: Install dependencies
       run: npm ci
+    - run: cd your/project/root
+    - run: node --require dd-trace/ci/init app.js
 
-    - name: Run app with Datadog tracing
-      run: node --require dd-trace/ci/init app.js
     - run: npm run build --if-present
     - run: npm test
     env:
