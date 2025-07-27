@@ -3,12 +3,6 @@ import * as help from '../../helpers/apihelper.js';
 import tags from 'mocha-tags-ultra';
 import { assert, expect, should, chai, chaiHttp } from '../../resources/assertStyles.js';
 
-import { readFileSync } from 'fs'
-
-const filePath = new URL('jsonFile.json', import.meta.url)
-const jsonContent = JSON.parse(readFileSync(filePath, 'utf-8'))
-console.log(jsonContent)
-
 
 let userid = [];
 
