@@ -95,6 +95,27 @@ describe.skip('validate User data', () => {
 
 })
 
+describe('Array', function () {
+  describe('#indexOf()', function () {
+    // pending test below
+    it('should return -1 when the value is not present');
+  });
+});
+
+describe('Failing Test Suite2', function() {
+  it('should intentionally fail because 2 + 2 is not 5', function() {
+    const result = 2 + 2;
+    assert.strictEqual(result, 5, 'Expected 2 + 2 to be 5, but it was not.');
+  });
+});
+
+describe('Failing Test Suite3', function() {
+  it('should intentionally fail because 2 + 2 is not 5', function() {
+    const result = 3 + 2;
+    assert.strictEqual(result, 7, 'Expected 3 + 2 to be 5, but it was not.');
+  });
+});
+
 describe('Sample tests', function () {
     tags('smoke', 'regression')
     describe('Sanity tests', function () {
