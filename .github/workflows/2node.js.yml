@@ -26,11 +26,15 @@ jobs:
       with:
         node-version: 18
         cache: 'npm'
-    - run: npm ci
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Run app with Datadog tracing
+      run: node --require dd-trace/ci/init app.js
     - run: npm run build --if-present
     - run: npm test
     env:
       DD_CIVISIBILITY_AGENTLESS_ENABLED: true
       DD_API_KEY: ${{secrets.DD_API_KEY}}
       DD_SITE: us5.datadoghq.com
-      NODE_OPTIONS: -r dd-trace/ci/init
+      NODE_OPTIONS: --require dd-trace/ci/init
